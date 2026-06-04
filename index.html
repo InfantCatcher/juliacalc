@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuliaCalc - Premium Work Hour Calculator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 2.5 2 L 11 2 L 6.75 6 Z" fill="url(#logo-grad)" stroke="url(#logo-grad)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                        <path d="M 13 2 L 21.5 2 L 17.25 6 Z" fill="url(#logo-grad)" stroke="url(#logo-grad)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                        <path d="M 2.5 12 L 6.75 8 L 12 12 L 17.25 8 L 21.5 12 L 21.5 16 L 17.25 12 L 12 16 L 6.75 12 L 2.5 16 Z" fill="url(#logo-grad)" stroke="url(#logo-grad)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                        <path d="M 2.5 22 L 11 22 L 6.75 18 Z" fill="url(#logo-grad)" stroke="url(#logo-grad)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                        <path d="M 13 22 L 21.5 22 L 17.25 18 Z" fill="url(#logo-grad)" stroke="url(#logo-grad)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logo-grad" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#8b5cf6"/>
+                                <stop offset="1" stop-color="#ec4899"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>Julia<span>Calc</span></h1>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <!-- Period & Configuration Panel -->
+            <section class="control-panel glass-card">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-calendar-week"></i> Select Work Period</h2>
+                </div>
+                <div class="period-selectors">
+                    <div class="input-group">
+                        <label>Start Date</label>
+                        <div class="custom-datepicker" id="start-datepicker">
+                            <div class="datepicker-trigger">
+                                <i class="fa-regular fa-calendar-days input-icon"></i>
+                                <span class="datepicker-value">--/--/----</span>
+                            </div>
+                            <div class="datepicker-calendar hidden"></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>End Date</label>
+                        <div class="custom-datepicker" id="end-datepicker">
+                            <div class="datepicker-trigger">
+                                <i class="fa-regular fa-calendar-days input-icon"></i>
+                                <span class="datepicker-value">--/--/----</span>
+                            </div>
+                            <div class="datepicker-calendar hidden"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions Panel -->
+            <section class="quick-actions-panel glass-card">
+                <div class="quick-fill-label">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Quick Fill (Apply to all loaded days):</span>
+                </div>
+                <div class="quick-fill-controls">
+                    <div class="picker-inline" id="quick-start-picker-container"></div>
+                    <span class="to-separator">to</span>
+                    <div class="picker-inline" id="quick-end-picker-container"></div>
+                    <button id="apply-quick-fill" class="btn btn-secondary">Apply Times</button>
+                    <button id="clear-all-times" class="btn btn-text">Clear All</button>
+                </div>
+            </section>
+
+            <!-- Dynamic Table Grid -->
+            <section class="table-container glass-card">
+                <div class="table-header-row">
+                    <div class="col-check"><i class="fa-solid fa-check-double"></i></div>
+                    <div class="col-day">Day</div>
+                    <div class="col-date">Date</div>
+                    <div class="col-time-start">Start Time</div>
+                    <div class="col-time-end">End Time</div>
+                    <div class="col-hours">Hours Worked</div>
+                </div>
+                <div id="dates-list" class="dates-list">
+                    <!-- Loaded dynamically via JavaScript -->
+                    <div class="empty-state">
+                        <i class="fa-regular fa-calendar-plus"></i>
+                        <p>Select start and end dates to generate your work hour sheet.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Break Logic Information Panel (Accordion style or clean small tag) -->
+            <div class="rules-info glass-card">
+                <div class="rules-title" id="toggle-rules">
+                    <span><i class="fa-solid fa-circle-info"></i> Auto-Break Deduction Rules</span>
+                    <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                </div>
+                <div class="rules-content" id="rules-content">
+                    <div class="rules-flex">
+                        <ul>
+                            <li>If worked duration <strong>&ge; 5 hours</strong>: 30-minute break deducted (Hours = N - 0.50).</li>
+                            <li>If worked duration <strong>&lt; 5 hours</strong>: 15-minute break deducted (Hours = N - 0.25).</li>
+                        </ul>
+                        <div class="rules-toggle-container">
+                            <span class="toggle-label">Deduct Breaks</span>
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="enable-breaks-checkbox" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Summary Sticky/Floating Footer -->
+        <footer class="app-summary">
+            <div class="summary-inner">
+                <div class="summary-stat">
+                    <span class="stat-label">Total Selected Days</span>
+                    <span id="total-days" class="stat-value">0</span>
+                </div>
+                <div class="summary-stat main-stat">
+                    <span class="stat-label">Total Hours Worked</span>
+                    <span id="total-hours" class="stat-value">0.00 <span class="unit">hrs</span></span>
+                </div>
+                <div class="summary-actions">
+                    <button id="share-btn" class="btn btn-primary btn-large">
+                        <i class="fa-solid fa-share-nodes"></i> Share / Copy to Clipboard
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast hidden">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <!-- Main Logic Script -->
+    <script src="app.js"></script>
+</body>
+</html>
