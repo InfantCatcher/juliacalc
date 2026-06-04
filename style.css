@@ -90,6 +90,10 @@
     display: none !important;
 }
 
+.mobile-label {
+    display: none;
+}
+
 /* ==========================================================================
    Reset & General Layout
    ========================================================================== */
@@ -852,7 +856,7 @@ body {
    ========================================================================== */
 .table-container {
     padding: 0.5rem;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .table-header-row {
@@ -1339,6 +1343,45 @@ body {
     
     .rules-toggle-container {
         justify-content: space-between;
+    }
+
+    /* Mobile Overrides to prevent layout jumbling */
+    .app-header {
+        margin: -1rem -1rem 0.5rem -1rem;
+        padding: 1rem 1rem;
+    }
+
+    .mobile-label {
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+    }
+
+    .dropdown-trigger {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.4rem 0.25rem 0.25rem;
+        min-width: 40px;
+        gap: 0.15rem;
+    }
+
+    .picker-inline {
+        padding: 2px 4px;
+        gap: 2px;
+    }
+
+    .caret-icon {
+        font-size: 0.55rem;
+    }
+
+    .datepicker-trigger {
+        padding: 0.65rem 0.65rem 0.65rem 2.25rem;
+        font-size: 0.875rem;
+    }
+
+    .custom-datepicker .input-icon {
+        left: 10px;
+        font-size: 0.9rem;
     }
 }
 
