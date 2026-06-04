@@ -33,15 +33,6 @@ To view the site:
 
 ---
 
-## Live Deployment on GitHub Pages
-
-This project is configured for GitHub Pages:
+## GitHub Pages
 - **Repository URL**: [https://github.com/InfantCatcher/juliacalc](https://github.com/InfantCatcher/juliacalc)
 - **Live Web Application URL**: [https://infantcatcher.github.io/juliacalc/](https://infantcatcher.github.io/juliacalc/)
-
-To activate the live link:
-1. Go to your repository settings at [https://github.com/InfantCatcher/juliacalc/settings/pages](https://github.com/InfantCatcher/juliacalc/settings/pages).
-2. Under **Build and deployment**, ensure **Deploy from a branch** is selected as the Source.
-3. Under **Branch**, select `main` and folder `/ (root)`.
-4. Click **Save**.
-5. Within 1-2 minutes, the live URL `https://infantcatcher.github.io/juliacalc/` will be active and ready to use!
