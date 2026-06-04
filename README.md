@@ -33,25 +33,15 @@ To view the site:
 
 ---
 
-## Free Hosting on GitHub Pages (Deployment)
+## Live Deployment on GitHub Pages
 
-To share this tool with the world for free:
-1. Initialize a Git repository in this folder:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit of JuliaCalc Work Hour Calculator"
-   ```
-2. Create a new repository on your GitHub account called `work-hour-calculator` (or similar).
-3. Connect your local repository to GitHub:
-   ```bash
-   git remote add origin https://github.com/your-username/work-hour-calculator.git
-   git branch -M main
-   git push -u origin main
-   ```
-4. Navigate to your repository settings on GitHub:
-   - Go to **Settings** > **Pages** (under the "Code and automation" section).
-   - Under **Build and deployment**, select **Deploy from a branch**.
-   - Under **Branch**, select `main` (or the branch you pushed to) and folder `/ (root)`.
-   - Click **Save**.
-5. After a few seconds, GitHub will provide a live URL (e.g., `https://your-username.github.io/work-hour-calculator/`) where you and others can use the app for free!
+This project is configured for GitHub Pages:
+- **Repository URL**: [https://github.com/InfantCatcher/juliacalc](https://github.com/InfantCatcher/juliacalc)
+- **Live Web Application URL**: [https://infantcatcher.github.io/juliacalc/](https://infantcatcher.github.io/juliacalc/)
+
+To activate the live link:
+1. Go to your repository settings at [https://github.com/InfantCatcher/juliacalc/settings/pages](https://github.com/InfantCatcher/juliacalc/settings/pages).
+2. Under **Build and deployment**, ensure **Deploy from a branch** is selected as the Source.
+3. Under **Branch**, select `main` and folder `/ (root)`.
+4. Click **Save**.
+5. Within 1-2 minutes, the live URL `https://infantcatcher.github.io/juliacalc/` will be active and ready to use!
