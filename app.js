@@ -575,17 +575,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Apply deduction break logic
-        // Formula: if N >= 5, deduct 0.5h (30 min); if N < 5, deduct 0.25h (15 min)
+        // Formula: if N > 5, deduct 1.0h (60 min); if N <= 5, deduct 0h (0 min)
         let deduction = 0;
         let tooltip = '';
         
         if (breaksEnabled && N > 0) {
-            if (N >= 5) {
-                deduction = 0.5;
-                tooltip = `Break deduction: 30 minutes (Worked \u2265 5 hours)`;
+            if (N > 5) {
+                deduction = 1.0;
+                tooltip = `Break deduction: 1 hour (Worked > 5 hours)`;
             } else {
-                deduction = 0.25;
-                tooltip = `Break deduction: 15 minutes (Worked < 5 hours)`;
+                deduction = 0;
+                tooltip = `Break deduction: 0 hours (Worked \u2264 5 hours)`;
             }
         }
 
@@ -780,7 +780,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
             });
-            
+
             // Touch dragging support for mobile
             if (isEndDate && startDate) {
                 const daysGrid = calendar.querySelector('.calendar-days');

@@ -8,8 +8,8 @@
 - **Flexible Exclusions**: Toggle inclusion checkboxes to darken/dim took-off days, automatically removing them from calculations.
 - **Time Wheel Pickers**: Mobile-friendly dropdown selectors mirroring physical time wheel inputs (1-12 Hour, 00/15/30/45 Minute, AM/PM).
 - **Auto-Break Deductions**:
-  - Shifts > 4 hours automatically deduct 15 minutes (0.25h).
-  - Shifts > 5 hours automatically deduct 30 minutes (0.50h).
+  - Shifts &le; 5 hours deduct 0 hours (0.00h).
+  - Shifts &gt; 5 hours automatically deduct 1 hour (1.00h).
 - **Quick Fill & Clear**: Instantly apply hours to all selected/active dates or wipe them with one-click buttons.
 - **Persistent Data**: Powered by local storage caching, your hours, checkboxes, and preferences remain safe even after reload.
 - **Share to Clipboard**: High-fidelity text-copy format designed for easy copy-pasting to Slack, WhatsApp, email, or invoices.
@@ -33,6 +33,15 @@ To view the site:
 
 ---
 
-## GitHub Pages
+## Live Deployment on GitHub Pages
+
+This project is configured for GitHub Pages:
 - **Repository URL**: [https://github.com/InfantCatcher/juliacalc](https://github.com/InfantCatcher/juliacalc)
 - **Live Web Application URL**: [https://infantcatcher.github.io/juliacalc/](https://infantcatcher.github.io/juliacalc/)
+
+To activate the live link:
+1. Go to your repository settings at [https://github.com/InfantCatcher/juliacalc/settings/pages](https://github.com/InfantCatcher/juliacalc/settings/pages).
+2. Under **Build and deployment**, ensure **Deploy from a branch** is selected as the Source.
+3. Under **Branch**, select `main` and folder `/ (root)`.
+4. Click **Save**.
+5. Within 1-2 minutes, the live URL `https://infantcatcher.github.io/juliacalc/` will be active and ready to use!
