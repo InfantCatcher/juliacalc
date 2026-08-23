@@ -4,7 +4,7 @@
 :root {
     /* Fonts */
     --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
 
     /* Common Transitions */
     --transition-fast: 0.2s ease;
@@ -12,10 +12,10 @@
     --transition-slow: 0.5s ease;
 
     /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.15);
-    --shadow-premium: 0 20px 40px rgba(99, 102, 241, 0.15);
+    --shadow-sm: 0 2px 8px rgba(50, 40, 30, 0.04);
+    --shadow-md: 0 8px 24px rgba(50, 40, 30, 0.08);
+    --shadow-lg: 0 16px 48px rgba(50, 40, 30, 0.12);
+    --shadow-premium: 0 16px 36px rgba(164, 119, 42, 0.18);
 
     /* Borders */
     --radius-sm: 8px;
@@ -24,64 +24,64 @@
     --radius-full: 9999px;
 }
 
-/* Default Variables (Minimalist Warm Cream #FDFBD4 & Burgundy Theme) */
+/* Default Variables (Editorial Warm Linen & Antique Gold Ochre Theme) */
 :root,
 .light-theme {
     color-scheme: light;
-    --bg-app: #FDFBD4;
-    --bg-surface: rgba(255, 255, 255, 0.92);
+    --bg-app: #F2ECE4;
+    --bg-surface: rgba(255, 255, 255, 0.88);
     --bg-surface-solid: #FFFFFF;
-    --bg-card: rgba(255, 255, 255, 0.95);
+    --bg-card: rgba(255, 255, 255, 0.92);
     --bg-input: #FFFFFF;
     --bg-picker: #FFFFFF;
-    --bg-summary: rgba(253, 251, 212, 0.94);
+    --bg-summary: rgba(242, 236, 228, 0.95);
     --calendar-icon-filter: invert(0.25) opacity(0.5);
-    --border-color: #E8E5BA;
-    --border-hover: rgba(122, 28, 48, 0.4);
+    --border-color: #E2DCD3;
+    --border-hover: rgba(179, 136, 56, 0.45);
     
-    --text-primary: #282320;
-    --text-secondary: #6E645D;
-    --text-muted: #A2978D;
+    --text-primary: #241F1C;
+    --text-secondary: #6E665E;
+    --text-muted: #9C9389;
     
-    --color-accent: #7A1C30;
-    --color-accent-hover: #94273E;
-    --color-gradient-start: #6B1726;
-    --color-gradient-end: #8E233B;
-    --color-glow: rgba(122, 28, 48, 0.14);
+    --color-accent: #B38838;
+    --color-accent-hover: #CFA34E;
+    --color-gradient-start: #A4772A;
+    --color-gradient-end: #CCA04C;
+    --color-glow: rgba(179, 136, 56, 0.16);
     
-    --row-active-bg: rgba(255, 255, 255, 0.9);
-    --row-inactive-bg: rgba(240, 237, 192, 0.55);
+    --row-active-bg: rgba(255, 255, 255, 0.88);
+    --row-inactive-bg: rgba(232, 224, 212, 0.48);
     --row-inactive-opacity: 0.6;
     
     --backdrop-blur: blur(16px);
 }
 
-/* Dark Theme Variables (Minimalist Warm Espresso & Burgundy) */
+/* Dark Theme Variables (Editorial Obsidian & Antique Gold) */
 .dark-theme {
     color-scheme: dark;
-    --bg-app: #151211;
-    --bg-surface: rgba(28, 24, 22, 0.8);
-    --bg-surface-solid: #211C1A;
-    --bg-card: rgba(35, 30, 28, 0.65);
+    --bg-app: #141210;
+    --bg-surface: rgba(26, 23, 21, 0.85);
+    --bg-surface-solid: #1E1B18;
+    --bg-card: rgba(32, 28, 25, 0.7);
     --bg-input: rgba(255, 255, 255, 0.05);
     --bg-picker: rgba(255, 255, 255, 0.07);
-    --bg-summary: rgba(21, 18, 17, 0.92);
+    --bg-summary: rgba(20, 18, 16, 0.94);
     --calendar-icon-filter: invert(1) opacity(0.65);
-    --border-color: rgba(255, 255, 255, 0.09);
-    --border-hover: rgba(195, 75, 95, 0.4);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(207, 163, 78, 0.4);
     
-    --text-primary: #F5EFEA;
-    --text-secondary: #B5A99D;
-    --text-muted: #7E736A;
+    --text-primary: #F4EFEA;
+    --text-secondary: #B0A69B;
+    --text-muted: #787067;
     
-    --color-accent: #C34B62;
-    --color-accent-hover: #D9657C;
-    --color-gradient-start: #94273E;
-    --color-gradient-end: #B83A55;
-    --color-glow: rgba(195, 75, 98, 0.25);
+    --color-accent: #D4A85B;
+    --color-accent-hover: #E2BC72;
+    --color-gradient-start: #B88B4A;
+    --color-gradient-end: #D8AF62;
+    --color-glow: rgba(212, 168, 91, 0.25);
     
     --row-active-bg: rgba(255, 255, 255, 0.03);
-    --row-inactive-bg: rgba(15, 12, 11, 0.65);
+    --row-inactive-bg: rgba(12, 10, 9, 0.65);
     --row-inactive-opacity: 0.4;
     
     --backdrop-blur: blur(16px);
@@ -113,8 +113,8 @@ body {
     display: flex;
     justify-content: center;
     transition: background-color var(--transition-normal), color var(--transition-normal);
-    background-image: radial-gradient(circle at 10% 15%, rgba(122, 28, 48, 0.025) 0%, transparent 45%),
-                      radial-gradient(circle at 90% 85%, rgba(122, 28, 48, 0.02) 0%, transparent 45%);
+    background-image: radial-gradient(circle at 10% 15%, rgba(179, 136, 56, 0.035) 0%, transparent 45%),
+                      radial-gradient(circle at 90% 85%, rgba(179, 136, 56, 0.025) 0%, transparent 45%);
     background-attachment: fixed;
 }
 
@@ -156,8 +156,8 @@ body {
     padding: 1rem 1.5rem;
     margin: -2rem -1.5rem 0.5rem -1.5rem;
     background-color: var(--bg-app);
-    background-image: radial-gradient(circle at 10% 15%, rgba(122, 28, 48, 0.025) 0%, transparent 45%),
-                      radial-gradient(circle at 90% 85%, rgba(122, 28, 48, 0.02) 0%, transparent 45%);
+    background-image: radial-gradient(circle at 10% 15%, rgba(179, 136, 56, 0.035) 0%, transparent 45%),
+                      radial-gradient(circle at 90% 85%, rgba(179, 136, 56, 0.025) 0%, transparent 45%);
     background-attachment: fixed;
     transition: background-color var(--transition-normal);
 }
@@ -177,9 +177,9 @@ body {
 
 .logo-text h1 {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -0.025em;
+    font-size: 1.85rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     line-height: 1.1;
 }
 
@@ -234,8 +234,9 @@ body {
 
 .panel-header h2 {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1.35rem;
     font-weight: 600;
+    letter-spacing: -0.01em;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -313,10 +314,10 @@ body {
     transform: translateX(-50%);
     z-index: 1100;
     width: 280px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(253, 251, 212, 0.98));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(242, 236, 228, 0.98));
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    box-shadow: 0 12px 32px rgba(60, 45, 35, 0.08), 0 2px 8px var(--color-glow);
+    box-shadow: 0 12px 32px rgba(50, 40, 30, 0.07), 0 2px 8px var(--color-glow);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     padding: 12px;
@@ -325,7 +326,7 @@ body {
 }
 
 .dark-theme .datepicker-calendar {
-    background: linear-gradient(135deg, rgba(28, 24, 22, 0.98), rgba(45, 25, 30, 0.98));
+    background: linear-gradient(135deg, rgba(26, 23, 21, 0.98), rgba(40, 32, 25, 0.98));
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 15px var(--color-glow);
 }
 
@@ -341,7 +342,7 @@ body {
 .month-year-label {
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.15rem;
     color: var(--text-primary);
 }
 
@@ -447,7 +448,7 @@ body {
 }
 
 .cal-footer-btn:hover {
-    background-color: rgba(122, 28, 48, 0.08);
+    background-color: rgba(179, 136, 56, 0.08);
     color: var(--color-accent-hover);
 }
 
@@ -458,12 +459,12 @@ body {
 }
 
 .day-num.in-range {
-    background: rgba(122, 28, 48, 0.08);
+    background: rgba(179, 136, 56, 0.08);
     border-radius: 0;
 }
 
 .day-num.in-range-hover {
-    background: rgba(122, 28, 48, 0.14) !important;
+    background: rgba(179, 136, 56, 0.15) !important;
     border-radius: 0;
 }
 
@@ -607,10 +608,10 @@ body {
     min-width: 80px;
     max-height: 220px;
     overflow-y: auto;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(253, 251, 212, 0.98));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(242, 236, 228, 0.98));
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    box-shadow: 0 12px 32px rgba(60, 45, 35, 0.08), 0 2px 8px var(--color-glow);
+    box-shadow: 0 12px 32px rgba(50, 40, 30, 0.07), 0 2px 8px var(--color-glow);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     padding: 4px;
@@ -618,7 +619,7 @@ body {
 }
 
 .dark-theme .dropdown-options-list {
-    background: linear-gradient(135deg, rgba(28, 24, 22, 0.98), rgba(45, 25, 30, 0.98));
+    background: linear-gradient(135deg, rgba(26, 23, 21, 0.98), rgba(40, 32, 25, 0.98));
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 15px var(--color-glow);
 }
 
@@ -650,7 +651,7 @@ body {
 }
 
 .dropdown-option.active {
-    background: rgba(122, 28, 48, 0.1);
+    background: rgba(179, 136, 56, 0.12);
     color: var(--color-accent);
     font-weight: 600;
 }
@@ -822,13 +823,13 @@ body {
 
 #apply-quick-fill.btn-secondary {
     color: var(--color-accent);
-    border-color: rgba(122, 28, 48, 0.28);
+    border-color: rgba(179, 136, 56, 0.3);
     background-color: var(--bg-surface-solid);
 }
 
 #apply-quick-fill.btn-secondary:hover {
     border-color: var(--color-accent);
-    background-color: rgba(122, 28, 48, 0.05);
+    background-color: rgba(179, 136, 56, 0.06);
     box-shadow: 0 0 12px var(--color-glow);
 }
 
@@ -993,9 +994,9 @@ body {
 
 .col-hours-val {
     text-align: right;
-    font-weight: 700;
+    font-weight: 600;
     font-family: var(--font-heading);
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: var(--text-primary);
 }
 
@@ -1034,7 +1035,7 @@ body {
     right: 0;
     background: var(--bg-summary);
     border-top: 1px solid var(--border-color);
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 -10px 30px rgba(50, 40, 30, 0.08);
     backdrop-filter: var(--backdrop-blur);
     -webkit-backdrop-filter: var(--backdrop-blur);
     padding: 1.25rem 1.5rem;
@@ -1068,13 +1069,14 @@ body {
 
 .summary-stat .stat-value {
     font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.25rem;
+    font-weight: 600;
+    font-size: 1.45rem;
     color: var(--text-primary);
 }
 
 .summary-stat.main-stat .stat-value {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    font-weight: 600;
     background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
