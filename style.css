@@ -105,6 +105,11 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-bottom: 16rem;
+}
+
 body {
     background-color: var(--bg-app);
     color: var(--text-primary);
@@ -121,7 +126,7 @@ body {
 .app-container {
     width: 100%;
     max-width: 900px;
-    padding: 2rem 1.5rem 10rem 1.5rem; /* Large bottom padding for sticky footer */
+    padding: 2rem 1.5rem 16rem 1.5rem; /* Generous bottom padding to allow full scrolling past bottom footer */
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -476,7 +481,7 @@ body {
 
 /* ==========================================================================
    Quick Actions Section
-   ========================================================================== */
+   ========================================================================= */
 .quick-actions-panel {
     position: relative;
     z-index: 20;
@@ -1138,7 +1143,7 @@ body {
     }
 
     .app-container {
-        padding: 1rem 1rem 11rem 1rem;
+        padding: 1rem 1rem 18rem 1rem;
         gap: 1rem;
     }
 

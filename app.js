@@ -516,6 +516,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 optionsList.classList.remove('hidden');
                 container.classList.add('open');
                 if (currentRow) currentRow.classList.add('has-open-dropdown');
+
+                // Ensure bottom of dropdown is completely visible above sticky bottom summary
+                setTimeout(() => {
+                    const rect = optionsList.getBoundingClientRect();
+                    const footer = document.querySelector('.app-summary');
+                    const footerTop = footer ? footer.getBoundingClientRect().top : window.innerHeight;
+                    if (rect.bottom > footerTop - 16) {
+                        const scrollNeeded = rect.bottom - (footerTop - 16);
+                        window.scrollBy({ top: scrollNeeded, behavior: 'smooth' });
+                    }
+                }, 50);
             }
         });
 
