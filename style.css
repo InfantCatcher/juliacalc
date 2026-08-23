@@ -224,7 +224,7 @@ body {
    ========================================================================== */
 .control-panel {
     position: relative;
-    z-index: 20;
+    z-index: 30;
     padding: 1.5rem;
 }
 
@@ -478,7 +478,7 @@ body {
    ========================================================================== */
 .quick-actions-panel {
     position: relative;
-    z-index: 15;
+    z-index: 20;
     padding: 1.25rem 1.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -681,6 +681,8 @@ body {
    Break Logic Information & Accordion
    ========================================================================== */
 .rules-info {
+    position: relative;
+    z-index: 1;
     padding: 0.75rem 1.25rem;
 }
 
@@ -850,6 +852,8 @@ body {
    Dynamic Grid & Table Layout
    ========================================================================== */
 .table-container {
+    position: relative;
+    z-index: 10;
     padding: 0.5rem;
     overflow: visible;
 }
@@ -878,6 +882,7 @@ body {
 }
 
 .date-row {
+    position: relative;
     display: grid;
     grid-template-columns: 50px 100px 110px 1fr 1fr 120px;
     gap: 0.75rem;
@@ -892,9 +897,11 @@ body {
     border-bottom: none;
 }
 
-.date-row:focus-within {
+.date-row:focus-within,
+.date-row:has(.custom-dropdown.open),
+.date-row.has-open-dropdown {
     position: relative;
-    z-index: 10;
+    z-index: 50;
 }
 
 /* Unselected row state: Dimmed/Darkened */

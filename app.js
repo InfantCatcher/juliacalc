@@ -128,6 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
             list.classList.add('hidden');
             list.parentElement.classList.remove('open');
         });
+        document.querySelectorAll('.date-row').forEach(row => {
+            row.classList.remove('has-open-dropdown');
+        });
         document.querySelectorAll('.datepicker-calendar').forEach(cal => {
             cal.classList.add('hidden');
             cal.parentElement.classList.remove('open');
@@ -498,16 +501,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (list !== optionsList) {
                     list.classList.add('hidden');
                     list.parentElement.classList.remove('open');
+                    const parentRow = list.closest('.date-row');
+                    if (parentRow) parentRow.classList.remove('has-open-dropdown');
                 }
             });
             
             const isOpen = !optionsList.classList.contains('hidden');
+            const currentRow = container.closest('.date-row');
             if (isOpen) {
                 optionsList.classList.add('hidden');
                 container.classList.remove('open');
+                if (currentRow) currentRow.classList.remove('has-open-dropdown');
             } else {
                 optionsList.classList.remove('hidden');
                 container.classList.add('open');
+                if (currentRow) currentRow.classList.add('has-open-dropdown');
             }
         });
 
@@ -521,6 +529,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 label.textContent = text;
                 optionsList.classList.add('hidden');
                 container.classList.remove('open');
+                const currentRow = container.closest('.date-row');
+                if (currentRow) currentRow.classList.remove('has-open-dropdown');
                 
                 options.forEach(opt => opt.classList.remove('active'));
                 option.classList.add('active');
