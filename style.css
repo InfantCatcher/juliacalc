@@ -24,66 +24,67 @@
     --radius-full: 9999px;
 }
 
-/* Dark Theme Variables (Default) */
-.dark-theme {
-    color-scheme: dark;
-    --bg-app: #09090b;
-    --bg-surface: rgba(20, 20, 25, 0.6);
-    --bg-surface-solid: #121217;
-    --bg-card: rgba(30, 30, 40, 0.45);
-    --bg-input: rgba(255, 255, 255, 0.05);
-    --bg-picker: rgba(255, 255, 255, 0.08);
-    --bg-summary: rgba(18, 18, 23, 0.85);
-    --calendar-icon-filter: invert(1) opacity(0.65);
-    --border-color: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(99, 102, 241, 0.3);
+/* Default Variables (Minimalist Beige, White & Burgundy Theme) */
+:root,
+.light-theme {
+    color-scheme: light;
+    --bg-app: #F8F5F0;
+    --bg-surface: rgba(255, 255, 255, 0.92);
+    --bg-surface-solid: #FFFFFF;
+    --bg-card: rgba(255, 255, 255, 0.95);
+    --bg-input: #FFFFFF;
+    --bg-picker: #FFFFFF;
+    --bg-summary: rgba(248, 245, 240, 0.94);
+    --calendar-icon-filter: invert(0.25) opacity(0.5);
+    --border-color: #E6DFD5;
+    --border-hover: rgba(122, 28, 48, 0.35);
     
-    --text-primary: #f4f4f5;
-    --text-secondary: #a1a1aa;
-    --text-muted: #71717a;
+    --text-primary: #282320;
+    --text-secondary: #6E645D;
+    --text-muted: #A2978D;
     
-    --color-accent: #8b5cf6;
-    --color-accent-hover: #a78bfa;
-    --color-gradient-start: #8b5cf6;
-    --color-gradient-end: #ec4899;
-    --color-glow: rgba(139, 92, 246, 0.3);
+    --color-accent: #7A1C30;
+    --color-accent-hover: #94273E;
+    --color-gradient-start: #6B1726;
+    --color-gradient-end: #8E233B;
+    --color-glow: rgba(122, 28, 48, 0.14);
     
-    --row-active-bg: rgba(255, 255, 255, 0.02);
-    --row-inactive-bg: rgba(9, 9, 11, 0.6);
-    --row-inactive-opacity: 0.4;
+    --row-active-bg: rgba(255, 255, 255, 0.88);
+    --row-inactive-bg: rgba(235, 229, 220, 0.45);
+    --row-inactive-opacity: 0.55;
     
     --backdrop-blur: blur(16px);
 }
 
-/* Light Theme Variables */
-.light-theme {
-    color-scheme: light;
-    --bg-app: #f8fafc;
-    --bg-surface: rgba(255, 255, 255, 0.7);
-    --bg-surface-solid: #ffffff;
-    --bg-card: rgba(241, 245, 249, 0.7);
-    --bg-input: #ffffff;
-    --bg-picker: #ffffff;
-    --bg-summary: rgba(255, 255, 255, 0.85);
-    --calendar-icon-filter: invert(0) opacity(0.5);
-    --border-color: rgba(0, 0, 0, 0.08);
-    --border-hover: rgba(99, 102, 241, 0.5);
+/* Dark Theme Variables (Minimalist Warm Espresso & Burgundy) */
+.dark-theme {
+    color-scheme: dark;
+    --bg-app: #151211;
+    --bg-surface: rgba(28, 24, 22, 0.8);
+    --bg-surface-solid: #211C1A;
+    --bg-card: rgba(35, 30, 28, 0.65);
+    --bg-input: rgba(255, 255, 255, 0.05);
+    --bg-picker: rgba(255, 255, 255, 0.07);
+    --bg-summary: rgba(21, 18, 17, 0.92);
+    --calendar-icon-filter: invert(1) opacity(0.65);
+    --border-color: rgba(255, 255, 255, 0.09);
+    --border-hover: rgba(195, 75, 95, 0.4);
     
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --text-muted: #94a3b8;
+    --text-primary: #F5EFEA;
+    --text-secondary: #B5A99D;
+    --text-muted: #7E736A;
     
-    --color-accent: #6366f1;
-    --color-accent-hover: #4f46e5;
-    --color-gradient-start: #6366f1;
-    --color-gradient-end: #db2777;
-    --color-glow: rgba(99, 102, 241, 0.15);
+    --color-accent: #C34B62;
+    --color-accent-hover: #D9657C;
+    --color-gradient-start: #94273E;
+    --color-gradient-end: #B83A55;
+    --color-glow: rgba(195, 75, 98, 0.25);
     
-    --row-active-bg: rgba(255, 255, 255, 0.5);
-    --row-inactive-bg: rgba(226, 232, 240, 0.4);
-    --row-inactive-opacity: 0.55;
+    --row-active-bg: rgba(255, 255, 255, 0.03);
+    --row-inactive-bg: rgba(15, 12, 11, 0.65);
+    --row-inactive-opacity: 0.4;
     
-    --backdrop-blur: blur(12px);
+    --backdrop-blur: blur(16px);
 }
 
 .hidden {
@@ -112,8 +113,8 @@ body {
     display: flex;
     justify-content: center;
     transition: background-color var(--transition-normal), color var(--transition-normal);
-    background-image: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
-                      radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 40%);
+    background-image: radial-gradient(circle at 10% 15%, rgba(122, 28, 48, 0.025) 0%, transparent 45%),
+                      radial-gradient(circle at 90% 85%, rgba(122, 28, 48, 0.02) 0%, transparent 45%);
     background-attachment: fixed;
 }
 
@@ -155,8 +156,8 @@ body {
     padding: 1rem 1.5rem;
     margin: -2rem -1.5rem 0.5rem -1.5rem;
     background-color: var(--bg-app);
-    background-image: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
-                      radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 40%);
+    background-image: radial-gradient(circle at 10% 15%, rgba(122, 28, 48, 0.025) 0%, transparent 45%),
+                      radial-gradient(circle at 90% 85%, rgba(122, 28, 48, 0.02) 0%, transparent 45%);
     background-attachment: fixed;
     transition: background-color var(--transition-normal);
 }
@@ -312,15 +313,20 @@ body {
     transform: translateX(-50%);
     z-index: 1100;
     width: 280px;
-    background: linear-gradient(135deg, rgba(18, 18, 23, 0.97), rgba(45, 20, 55, 0.98));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 244, 238, 0.98));
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(139, 92, 246, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 32px rgba(60, 45, 35, 0.08), 0 2px 8px var(--color-glow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 12px;
     animation: fadeInDropdown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     user-select: none;
+}
+
+.dark-theme .datepicker-calendar {
+    background: linear-gradient(135deg, rgba(28, 24, 22, 0.98), rgba(45, 25, 30, 0.98));
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 15px var(--color-glow);
 }
 
 .calendar-header {
@@ -340,7 +346,7 @@ body {
 }
 
 .cal-btn {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-input);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
     cursor: pointer;
@@ -355,7 +361,7 @@ body {
 
 .cal-btn:hover {
     border-color: var(--color-accent);
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: var(--row-inactive-bg);
     transform: scale(1.05);
 }
 
@@ -391,7 +397,7 @@ body {
 
 .day-num.padding-day {
     color: var(--text-muted);
-    opacity: 0.25;
+    opacity: 0.3;
     cursor: default;
     pointer-events: none;
 }
@@ -418,12 +424,6 @@ body {
     box-shadow: 0 0 10px var(--color-glow);
 }
 
-/* Light Theme overrides for datepicker */
-.light-theme .datepicker-calendar {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(243, 232, 255, 0.98));
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 0 10px rgba(99, 102, 241, 0.1);
-}
-
 .calendar-footer {
     display: flex;
     justify-content: space-between;
@@ -447,7 +447,7 @@ body {
 }
 
 .cal-footer-btn:hover {
-    background-color: rgba(139, 92, 246, 0.08);
+    background-color: rgba(122, 28, 48, 0.08);
     color: var(--color-accent-hover);
 }
 
@@ -458,12 +458,12 @@ body {
 }
 
 .day-num.in-range {
-    background: rgba(139, 92, 246, 0.15) ;
+    background: rgba(122, 28, 48, 0.08);
     border-radius: 0;
 }
 
 .day-num.in-range-hover {
-    background: rgba(236, 72, 153, 0.2) !important;
+    background: rgba(122, 28, 48, 0.14) !important;
     border-radius: 0;
 }
 
@@ -497,7 +497,7 @@ body {
 }
 
 .quick-fill-label i {
-    color: #eab308; /* yellow-500 accent for lightning bolt */
+    color: var(--color-accent);
 }
 
 .quick-fill-controls {
@@ -607,14 +607,19 @@ body {
     min-width: 80px;
     max-height: 220px;
     overflow-y: auto;
-    background: linear-gradient(135deg, rgba(18, 18, 23, 0.97), rgba(45, 20, 55, 0.98));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 244, 238, 0.98));
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(139, 92, 246, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 32px rgba(60, 45, 35, 0.08), 0 2px 8px var(--color-glow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 4px;
     animation: fadeInDropdown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark-theme .dropdown-options-list {
+    background: linear-gradient(135deg, rgba(28, 24, 22, 0.98), rgba(45, 25, 30, 0.98));
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 15px var(--color-glow);
 }
 
 @keyframes fadeInDropdown {
@@ -645,8 +650,8 @@ body {
 }
 
 .dropdown-option.active {
-    background: rgba(139, 92, 246, 0.25);
-    color: var(--color-accent-hover);
+    background: rgba(122, 28, 48, 0.1);
+    color: var(--color-accent);
     font-weight: 600;
 }
 
@@ -670,17 +675,6 @@ body {
 .quick-start-minute .dropdown-options-list,
 .quick-end-minute .dropdown-options-list {
     height: 156px;
-}
-
-/* Light Theme overrides */
-.light-theme .dropdown-options-list {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(243, 232, 255, 0.98));
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 0 10px rgba(99, 102, 241, 0.1);
-}
-
-.light-theme .dropdown-option.active {
-    background: rgba(99, 102, 241, 0.15);
-    color: var(--color-accent);
 }
 
 /* ==========================================================================
@@ -805,8 +799,8 @@ body {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.25);
-    filter: brightness(1.1);
+    box-shadow: 0 12px 30px var(--color-glow);
+    filter: brightness(1.08);
 }
 
 .btn-primary:active {
@@ -821,18 +815,19 @@ body {
 
 .btn-secondary:hover {
     border-color: var(--color-accent);
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--row-inactive-bg);
 }
 
 #apply-quick-fill.btn-secondary {
-    color: #eab308;
-    border-color: rgba(234, 179, 8, 0.25);
+    color: var(--color-accent);
+    border-color: rgba(122, 28, 48, 0.28);
+    background-color: var(--bg-surface-solid);
 }
 
 #apply-quick-fill.btn-secondary:hover {
-    border-color: #eab308;
-    background-color: rgba(234, 179, 8, 0.08);
-    box-shadow: 0 0 12px rgba(234, 179, 8, 0.25);
+    border-color: var(--color-accent);
+    background-color: rgba(122, 28, 48, 0.05);
+    box-shadow: 0 0 12px var(--color-glow);
 }
 
 .btn-text {

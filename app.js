@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // App State
     let shiftsData = JSON.parse(localStorage.getItem('julia_calc_shifts')) || {};
-    let activeTheme = localStorage.getItem('julia_calc_theme') || 'dark-theme';
+    let activeTheme = localStorage.getItem('julia_calc_theme') || 'light-theme';
     let breaksEnabled = shiftsData.breaksEnabled !== false;
 
     // Time Dropdown Arrays
