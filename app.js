@@ -338,11 +338,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const dateKey = formatDateString(current);
             const dayName = current.toLocaleDateString('en-US', { weekday: 'long' });
             const dateLabel = current.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            const dayOfWeek = current.getDay(); // 0 is Sunday, 6 is Saturday
+            const isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
 
-            // Initialize defaults in shiftsData state if empty
+            // Initialize defaults in shiftsData state if empty (weekends unselected by default)
             if (!shiftsData[dateKey]) {
                 shiftsData[dateKey] = {
-                    selected: true,
+                    selected: !isWeekend,
                     startHour: '',
                     startMinute: '00',
                     startPeriod: 'AM',
@@ -351,10 +353,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     endPeriod: 'PM',
                     hoursWorked: 0
                 };
+            } else if (!shiftsData[dateKey].manuallyToggled && shiftsData[dateKey].startHour === '' && shiftsData[dateKey].endHour === '' && isWeekend) {
+                // If previously cached as an untouched default, update weekend to unselected
+                shiftsData[dateKey].selected = false;
             }
 
             const state = shiftsData[dateKey];
-            const isChecked = state.selected !== false; // default true
+            const isChecked = state.selected !== false;
 
             const row = document.createElement('div');
             row.className = `date-row ${isChecked ? '' : 'unselected'}`;
@@ -402,6 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
             checkbox.addEventListener('change', (e) => {
                 const checked = e.target.checked;
                 shiftsData[dateKey].selected = checked;
+                shiftsData[dateKey].manuallyToggled = true;
                 
                 if (checked) {
                     row.classList.remove('unselected');
