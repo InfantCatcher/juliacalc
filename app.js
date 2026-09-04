@@ -353,13 +353,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     endPeriod: 'PM',
                     hoursWorked: 0
                 };
-            } else if (!shiftsData[dateKey].manuallyToggled && shiftsData[dateKey].startHour === '' && shiftsData[dateKey].endHour === '' && isWeekend) {
-                // If previously cached as an untouched default, update weekend to unselected
+            } else if (isWeekend && !shiftsData[dateKey].manuallyToggled && (!shiftsData[dateKey].startHour || shiftsData[dateKey].startHour === '')) {
+                // For weekends without manual toggling and without entered times, ensure default is unselected
                 shiftsData[dateKey].selected = false;
             }
 
             const state = shiftsData[dateKey];
-            const isChecked = state.selected !== false;
+            const isChecked = state.selected === true;
 
             const row = document.createElement('div');
             row.className = `date-row ${isChecked ? '' : 'unselected'}`;
